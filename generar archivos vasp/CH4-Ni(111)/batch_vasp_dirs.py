@@ -72,3 +72,23 @@ def batch_folders():
             for r_key in rotations:
                 make_folder(old_poscar, h_key, t_key, r_key)
     pass
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rotations_2h = {'60': z_rotation_matrix(60),
+                '75': z_rotation_matrix(75),
+                '90': z_rotation_matrix(90),
+                '105': z_rotation_matrix(105),
+                '120': z_rotation_matrix(120),
+                '135': z_rotation_matrix(135),
+                '150': z_rotation_matrix(150),
+                '165': z_rotation_matrix(165)}
+
+
+#      extra  2h
+def batch_folders_extra2h():
+    old_poscar = poscars_dict['2h']
+    for t_key in translations:
+        for r_key in rotations_2h:
+            make_folder(old_poscar, '2h', t_key, r_key)
+    pass
