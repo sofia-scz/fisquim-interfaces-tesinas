@@ -46,8 +46,8 @@ def make_folders(source_path, ouput_path, translation_dict, rotation_dict):
 
     for h_key in poscars_dict:
         old_poscar = poscars_dict[h_key]
-        for t_key in translations:
-            for r_key in rotations:
+        for t_key in translation_dict:
+            for r_key in rotation_dict:
 
                 # def path & folder name
                 new_dir_name = h_key+'_'+t_key+'_'+r_key+'deg'
