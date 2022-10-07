@@ -58,8 +58,8 @@ def make_folders(source_path, ouput_path, translation_dict, rotation_dict):
                 copy_files(source, path)
 
                 # get new POSCAR
-                new_poscar = mod_poscar(old_poscar, r=translations[t_key],
-                                        M=rotations[r_key])
+                new_poscar = mod_poscar(old_poscar, r=translation_dict[t_key],
+                                        M=rotation_dict[r_key])
 
                 # save new POSCAR
                 with open(os.path.join(path, 'POSCAR'), 'w') as poscar_newfile:
