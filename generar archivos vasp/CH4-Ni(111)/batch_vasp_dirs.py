@@ -24,6 +24,7 @@ translations = {'top': (a, h, 0),
 
 
 # rotations
+# matrix acting on COLUMN vectors
 def z_rotation_matrix(theta, deg=True):
     if deg:
         aaa = theta*np.pi/180
