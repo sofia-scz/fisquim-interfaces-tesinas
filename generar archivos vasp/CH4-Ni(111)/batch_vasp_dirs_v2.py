@@ -70,10 +70,4 @@ def make_folders(source_path, ouput_path, translation_dict, rotation_dict):
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 rotations_2h = {'60': z_rotation_matrix(60),
-                '75': z_rotation_matrix(75),
-                '90': z_rotation_matrix(90),
-                '105': z_rotation_matrix(105),
-                '120': z_rotation_matrix(120),
-                '135': z_rotation_matrix(135),
-                '150': z_rotation_matrix(150),
-                '165': z_rotation_matrix(165)}
+                '75': z_rotation_matrix(75)}
