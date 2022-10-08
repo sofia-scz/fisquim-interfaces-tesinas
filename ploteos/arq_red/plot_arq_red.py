@@ -78,8 +78,8 @@ ax.scatter(output_x, output_y, color='#8f8', edgecolor='#282',
 # plot division lines
 d = 1
 ax.plot([a/2, a/2], [-d, h+d], color='#666', lw=1, ls='--')
-ax.plot([3*a/2, 3*a/2], [-d, h+d], color='#666', lw=1, ls='--')
-ax.plot([7*a/2, 7*a/2], [-d, h+d], color='#666', lw=1, ls='--')
+ax.plot([3*a/2, 3*a/2], [-d+.2*h, .8*h+d], color='#666', lw=1, ls='--')
+ax.plot([7*a/2, 7*a/2], [-d+.2*h, .8*h+d], color='#666', lw=1, ls='--')
 
 # text
 ax.text(-.45, h+1, 'Coordenadas\n  cartesianas')
@@ -88,7 +88,7 @@ ax.text(2.3, h-2, 'Hidden\n layers')
 ax.text(3.7, h-3, 'Output\n  layer')
 
 # # arrows + text
-ax.annotate('Cambio a\ncoordenadas\ninvariantes', xy=(.5, 1),
+ax.annotate('Cambio a\ncoordenadas\ninvariantes', xy=(.55, 1.1),
             xytext=(.7, .2),
             arrowprops=dict(color='#444', shrink=0.0, lw=.5),
             horizontalalignment='left', verticalalignment='top',
