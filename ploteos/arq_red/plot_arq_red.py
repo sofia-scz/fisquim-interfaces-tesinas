@@ -14,28 +14,32 @@ a = 1
 h = 10
 
 # data
-cart_nodes = 10
+cart_nodes = 3
+h2 = h/3
 cart_x = np.zeros(cart_nodes)
-cart_y = np.linspace(0, h, cart_nodes)
+cart_y = np.linspace(-h2, h2, cart_nodes)
 
 # input
-input_nodes = 4
+input_nodes = 10
+h2 = h
 input_x = np.zeros(input_nodes) + a
-input_y = np.linspace(0, h/2, input_nodes) + h/4
+input_y = np.linspace(-h2, h2, input_nodes)
 
 # hidden 1
 h1_nodes = 3
+h2 = h/3
 hidden1_x = np.zeros(h1_nodes) + 2*a
-hidden1_y = np.linspace(0, h/3, h1_nodes) + h/3
+hidden1_y = np.linspace(-h2, h2, h1_nodes)
 
 # hidden 2
 h2_nodes = 3
+h2 = h/3
 hidden2_x = np.zeros(h2_nodes) + 3*a
-hidden2_y = np.linspace(0, h/3, h2_nodes) + h/3
+hidden2_y = np.linspace(-h2, h2, h2_nodes)
 
 # output
 output_x = np.zeros(1) + 4*a
-output_y = np.linspace(0, 1, 1) + h/2
+output_y = np.linspace(-1, 1, 1)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,28 +81,27 @@ ax.scatter(output_x, output_y, color='#8f8', edgecolor='#282',
 
 # plot division lines
 d = 1
-ax.plot([a/2, a/2], [-d, h+d], color='#666', lw=1, ls='--')
-ax.plot([3*a/2, 3*a/2], [-d+.2*h, .8*h+d], color='#666', lw=1, ls='--')
-ax.plot([7*a/2, 7*a/2], [-d+.2*h, .8*h+d], color='#666', lw=1, ls='--')
+ax.plot([a/2, a/2], [-h+d, h-d], color='#666', lw=1, ls='--')
+ax.plot([3*a/2, 3*a/2], [-h+d, h-d], color='#666', lw=1, ls='--')
+ax.plot([7*a/2, 7*a/2], [-h*.5, h*.5], color='#666', lw=1, ls='--')
 
 # text
-ax.text(-.45, h+1, 'Coordenadas\n  cartesianas')
-ax.text(.83, h-1, 'Input\n layer')
-ax.text(2.3, h-2, 'Hidden\n layers')
-ax.text(3.7, h-3, 'Output\n  layer')
+ax.text(-.6, h/2, 'Coordenadas\n  cartesianas')
+ax.text(.8, h+2, 'Input\n layer')
+ax.text(2.5, h/2, 'Hidden\n layers')
+ax.text(3.8, h/5-1, 'Output\n  layer')
 
 # # arrows + text
-ax.annotate('Cambio a\ncoordenadas\ninvariantes', xy=(.55, 1.1),
-            xytext=(.7, .2),
+ax.annotate('Cambio a\ncoordenadas\ninvariantes', xy=(.5, -5),
+            xytext=(-.23, -10),
             arrowprops=dict(color='#444', shrink=0.0, lw=.5),
-            horizontalalignment='left', verticalalignment='top',
             )
 
 # ax.axis('off')
 ax.get_xaxis().set_ticks([])
 ax.get_yaxis().set_ticks([])
-ax.set_xlim(-.7, 4.5)
-ax.set_ylim(-2, 12.5)
+ax.set_xlim(-1, 5)
+ax.set_ylim(-12, 15)
 
 fig.tight_layout(pad=.2)
 plt.show()
