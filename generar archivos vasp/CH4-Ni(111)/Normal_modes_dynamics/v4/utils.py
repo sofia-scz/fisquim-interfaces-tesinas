@@ -38,10 +38,10 @@ def load_poscars(source_path):
 # load default poscar
 # vibration mode1
 def exc_states_load_poscar(source_path):
-    with open(os.path.join(source_path, 'mode1', 'POSCAR'),
+    with open(os.path.join(source_path, 'POSCAR'),
               'r') as source_poscar:
         lines = source_poscar.readlines()
-        datadict = {'mode1': lines}
+        datadict = {'source': lines}
     return datadict
 
 
@@ -52,9 +52,9 @@ def exc_states_load_modes(source_path):
     with open(os.path.join(source_path, 'modes.txt'),
               'r') as source_modes:
         lines = source_modes.readlines()
-        for i in range(3):
+        for i in range(4):
             j = 1 + 7*i
-            datadict['mode'+str(i+2)] = np.array([np.fromstring(line, sep='\t',
+            datadict['mode'+str(i+1)] = np.array([np.fromstring(line, sep='\t',
                                                                 count=6)
                                                   for line in lines[j:j+5]])
     return datadict
@@ -94,19 +94,19 @@ def mod_array(array, r, M, m):
 
     # excited states
     if m is not None:
-        result += m
+        result += m[:, 3:]
 
     return result
 
 
 # format value
 def format_value(x):
-    out = f'{x:10.10f}'
+    out = f'{x:12.15f}'
     while out[0] == ' ':
         out = out[1:]
-    while len(out) < 9:
+    while len(out) < 11:
         out += '0'
-    while len(out) > 9:
+    while len(out) > 11:
         out = out[:-1]
     return out
 
@@ -120,7 +120,7 @@ def edit_line(line, vector):
 
 def mod_poscar(old_poscar, n0, r=None, M=None, m=None):
     # compute new coords
-    old_coords = load_pos_array(old_poscar)
+    old_coords = load_pos_array(old_poscar, n0)
     new_coords = mod_array(old_coords, r, M, m)
 
     # edit old poscar

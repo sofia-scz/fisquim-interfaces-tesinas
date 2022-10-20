@@ -1,0 +1,35 @@
+ SYSTEM = Ni(111) + CH4, PAW 3x3 s.u.c. 4L - Step 1
+ ISTART = 0
+ ICHARG = 2
+ LWAVE = .FALSE.
+
+ ENCUT = 350
+# PREC = Accurate   ### HFB ###
+ LREAL = Auto       ### HFB ###
+ ISMEAR = -1
+ SIGMA = 0.1
+ ALGO = F
+ ISYM = 0
+# NELMIN = 4       ### HFB ###
+ NELMDL = -12    ### HFB ###  =-12
+ ISPIN = 2
+
+ # Ionic motion
+  IBRION = 0      ! MD
+  MDALGO = 0      ! Standard MD NVE ensemble
+  SMASS = -3      ! NVE ensemble
+  POTIM = 0.2     ! Time step in fs
+  NSW=150         ! maximum number of ionic steps
+ 
+ LPLANE = .TRUE.
+# NCORE  =  16        ### HFB:   NCORE= number of cores per node (e.g. 4, 8, 16, etc) ###
+ NPAR = 1           ### HFB ### Probar si 
+# KPAR = 2
+ LSCALU = .FALSE.
+ NSIM   = 4
+ 
+ GGA = SR
+ PARAM1 = 0.32
+ LUSE_VDW = .TRUE.
+ AGGAC = 0.0000
+ LASPH = .TRUE.
