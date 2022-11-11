@@ -4,14 +4,13 @@ Ref: Hünenberger, P. H. (2005). Thermostat Algorithms for Molecular Dynamics Si
 
 De acuerdo a la referencia el valor ideal de la masa de Nose-Hoover Q (SMASS en VASP) se estima segun
 
-$$ Q \approx \frac{7}{5} N_{f} k_B T_0 \tau_T^2 $$
+$$ Q \approx \frac{7}{5} N_{f} k_B T_0 \omega^2 $$
 
 $N_f$: grados de libertad
 
 $T_0$: temperatura del baño térmico
 
-$\tau_T$: tiempo de relajación de la temperatura
-
+$\omega$: frecuencia de vibración de los fonones (orden de magnitud)
 
 Detalles
 
@@ -22,8 +21,8 @@ grados de libertad que perdemos por las constraints, en principio sólo nos inte
 simulaciones y por lo tanto se restarían sus grados de libertad. (no se entiende de donde sale esto) $N_r$ se toma como $3$ si el sistema tiene
 condiciones de frontera periódicas como en nuestro caso. 
 
-Por otro lado, $\tau_T$ sale de
+Ajustado a las constantes de VASP y demás queda aprox
 
-$$ \frac{d}{dt}\mathcal{T}(t) = \frac{1}{\tau_T}\left[T_0 - \mathcal{T}(t)\right] $$
+$$ Q \approx 3.82 \times 10^{-8} T_0 \omega^2 $$
 
-en la práctica se asume que $\tau_T \approx 100 fs$.
+con $T_0$ en kelvin y $\omega$ en fs.
