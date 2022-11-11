@@ -10,7 +10,8 @@ $N_f$: grados de libertad
 
 $T_0$: temperatura del baño térmico
 
-$\omega$: frecuencia de vibración de los fonones (orden de magnitud)
+$\omega$: frecuencia de oscilación de la temperatura. Idealmente va a ser una fracción de la frecuencia de vibración de los fonones del sistema. Ej:
+si la f de los fonones es 2000fs probamos con 500 o 1000.
 
 Detalles
 
@@ -21,7 +22,7 @@ grados de libertad que perdemos por las constraints, en principio sólo nos inte
 simulaciones y por lo tanto se restarían sus grados de libertad. (no se entiende de donde sale esto) $N_r$ se toma como $3$ si el sistema tiene
 condiciones de frontera periódicas como en nuestro caso. 
 
-Ajustado a las constantes de VASP y nuestro sistema y demás queda aprox
+Ajustado a las constantes de VASP y nuestro sistema (18 átomos libres) y demás queda aprox
 
 $$ Q \approx 3.82 \times 10^{-8} T_0 \omega^2 $$
 
