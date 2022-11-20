@@ -1,0 +1,17 @@
+TRAININGSET CH4Ni_11-11-2022.train
+TESTPERCENT   10
+ITERATIONS   50000
+
+TIMING
+SAVE_ENERGIES
+
+METHOD
+bfgs
+
+NETWORKS
+! atom   network        hidden
+! types  file-name      layers  nodes:activation
+  Ni     Ni.20t-20t.ann   2    20:tanh 20:tanh
+  H      H.20t-20t.ann    2    20:tanh 20:tanh
+  C      C.20t-20t.ann    2    20:tanh 20:tanh
+
