@@ -1,0 +1,30 @@
+ SYSTEM = Ni(111) + CH4, PAW 3x3 s.u.c. 4L - Step 1
+ ISTART = 0
+ ICHARG = 2
+ LWAVE = .FALSE.
+
+ ENCUT = 350
+ LREAL = Auto
+ ISMEAR = -1
+ SIGMA = 0.1
+ ALGO = F
+ ISYM = 0
+ NELMIN = 6
+ NELMDL = -8
+ ISPIN = 2
+
+ IBRION = 0
+ NSW = 0
+ EDIFFG = 1e-6
+
+ LPLANE = .TRUE.
+ NCORE  =  16 
+ LSCALU = .FALSE.
+ NSIM   = 4
+ 
+ GGA = SR
+ PARAM1 = 0.32
+ LUSE_VDW = .TRUE.
+ AGGAC = 0.0000
+ LASPH = .TRUE.
+
